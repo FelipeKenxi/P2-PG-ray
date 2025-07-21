@@ -10,19 +10,26 @@
 
 int main() {
     hittable_list world;
-
     auto material_ground = make_shared<lambertian>(color(0.8, 0.8, 0.0));
+    world.add(make_shared<sphere>(point3( 0.0, -1000, 0), 1000.0, material_ground));
+
+    //Felipe P MElo
+    //Uma lua brilhante
+    auto material_lua = make_shared<lambertian>(color(2.0, 2.0, 0.8)); //talvez seja melhor ajustar 
+    world.add(make_shared<sphere>(point3(16.0, 40, -200), 100.0, material_lua)); 
+/*
+    
     auto material_center = make_shared<lambertian>(color(0.1, 0.2, 0.5));
     auto material_left   = make_shared<dielectric>(1.50);
     auto material_bubble = make_shared<dielectric>(1.00 / 1.50);
     auto material_right  = make_shared<metal>(color(0.8, 0.6, 0.2), 1.0);
 
-    world.add(make_shared<sphere>(point3( 0.0, -100.5, -1.0), 100.0, material_ground));
+    
     world.add(make_shared<sphere>(point3( 0.0,    0.0, -1.2),   0.5, material_center));
     world.add(make_shared<sphere>(point3(-1.0,    0.0, -1.0),   0.5, material_left));
     world.add(make_shared<sphere>(point3(-1.0,    0.0, -1.0),   0.4, material_bubble));
     world.add(make_shared<sphere>(point3( 1.0,    0.0, -1.0),   0.5, material_right));
-
+*/
     camera cam;
 
     cam.aspect_ratio      = 16.0 / 9.0;
@@ -32,12 +39,12 @@ int main() {
 
 
     cam.vfov     = 90;
-    cam.lookfrom = point3(-2,2,1);
+    cam.lookfrom = point3(13,2,2);
     cam.lookat   = point3(0,0,-1);
     cam.vup      = vec3(0,1,0);
 
-    cam.defocus_angle = 10.0;
-    cam.focus_dist    = 3.4;
+    cam.defocus_angle = 0.6;
+    cam.focus_dist    = 10.0;
 
     cam.render(world);
 }
