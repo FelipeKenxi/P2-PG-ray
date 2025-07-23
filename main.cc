@@ -21,10 +21,10 @@ int main() {
     //Felipe P Melo
     //Estrelas de metal
     for (int i = 0; i < 20; ++i) {
-        double radius = random_double(4.0, 7.0);
-        double x = random_double(-100, 100);
-        double y = random_double(-30, 0);  
-        double z = random_double(-60, -30);
+        double radius = random_double(4.0, 10.0);
+        double x = random_double(-70, 70);
+        double y = random_double(-30, -20);  
+        double z = random_double(-60, 30);
 
         auto metal_star = make_shared<metal>(
             color(random_double(0.7, 1.0), random_double(0.7, 1.0), random_double(0.7, 1.0)),
@@ -36,10 +36,10 @@ int main() {
     
     // Esferas de vidro (dielétrico)
     for (int i = 0; i < 7; ++i) {
-        double radius = random_double(2.0, 3.0);
+        double radius = random_double(2.0, 5.0);
         double x = random_double(-25, 25);   // região mais central
-        double y = random_double(-10, 15.0);
-        double z = random_double(-20, 0.0); // um pouco mais próximas
+        double y = random_double(-5, 20);
+        double z = random_double(-30, 0); // um pouco mais próximas
 
         auto glass_material = make_shared<dielectric>(1.5);
 
@@ -53,7 +53,7 @@ int main() {
         double radius = random_double(5.0, 12.0);
         double x = random_double(-250, 250);
         double y = random_double(-30, 120);
-        double z = random_double(-120, -150); 
+        double z = random_double(-150, -120); 
 
         auto lambert_material = make_shared<lambertian>(
             color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
@@ -61,6 +61,33 @@ int main() {
 
         world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
     }
+    for (int i=0; i<50;i++) {
+        double radius = random_double(5.0, 12.0);
+        double x = random_double(-250, 250);
+        double y = random_double(-30, 120);
+        double z = random_double(120, 150); 
+
+        auto lambert_material = make_shared<lambertian>(
+            color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
+        );
+
+        world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
+    }
+    for (int i=0; i<20;i++) {
+        double radius = random_double(5.0, 12.0);
+        double x = random_double(-250, 250);
+        double y = random_double(100, 120);
+        double z = random_double(-120, 120); 
+
+        auto lambert_material = make_shared<lambertian>(
+            color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
+        );
+
+        world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
+    }
+
+    world.add(make_shared<sphere>(point3(0,0,5), 2.0, make_shared<dielectric>(1.7)));
+    world.add(make_shared<sphere>(point3(0,0,5), -2 * 0.95, make_shared<dielectric>(1.7)));
 /*
     
     auto material_center = make_shared<lambertian>(color(0.1, 0.2, 0.5));
@@ -77,8 +104,8 @@ int main() {
     camera cam;
 
     cam.aspect_ratio      = 16.0 / 9.0;
-    cam.image_width       = 800;
-    cam.samples_per_pixel = 100;
+    cam.image_width       = 400;
+    cam.samples_per_pixel = 30;
     cam.max_depth         = 50;
 
 
