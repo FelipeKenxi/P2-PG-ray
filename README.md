@@ -23,11 +23,11 @@ Durante a execução do projeto, o objetivo foi:
 -
 
 ## Visualização da imagem
-- A imagem renderizada é salva no arquivo 'image.ppm'. É possível abrir esse arquivos com programas como:
-      - InfanView;
-      - GIMP;
-      - Visualizadores de imagem que suportem '.ppm';
-      - Ou converter para '.png'.
+A imagem renderizada é salva no arquivo 'image.ppm'. É possível abrir esse arquivos com programas como:
+- InfanView;
+- GIMP;
+- Visualizadores de imagem que suportem '.ppm';
+- Ou converter para '.png'.
 
 ## Como executar o projeto
 
@@ -37,6 +37,7 @@ Durante a execução do projeto, o objetivo foi:
 - Terminal (Linux/Mac) ou WSL/Git Bash (no Windows)
 
 ### Compilando
+-
 
 ### Executando
 ./raytracer > image.ppm
