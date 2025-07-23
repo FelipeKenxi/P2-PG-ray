@@ -37,7 +37,7 @@ A imagem renderizada é salva no arquivo 'image.ppm'. É possível abrir esse ar
 - Terminal (Linux/Mac) ou WSL/Git Bash (no Windows)
 
 ### Compilando
--
+- g++ main.cc -o raytracer
 
 ### Executando
-./raytracer > image.ppm
+- ./raytracer > image.ppm
