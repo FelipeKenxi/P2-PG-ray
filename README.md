@@ -45,3 +45,6 @@ A imagem renderizada é salva no arquivo 'image.ppm'. É possível abrir esse ar
 - GIMP;
 - Visualizadores de imagem que suportem '.ppm';
 - Ou converter para '.png'.
+
+## Bibliografia
+- 
