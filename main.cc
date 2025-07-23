@@ -34,6 +34,19 @@ int main() {
         world.add(make_shared<sphere>(point3(x, y, z), radius, metal_star));
     }
     
+    // Esferas de vidro (dielétrico)
+    for (int i = 0; i < 30; ++i) {
+        double radius = random_double(0.4, 1.0);
+        double x = random_double(-20, 20);   // região mais central
+        double y = random_double(0.0, 30.0);
+        double z = random_double(-100, -10); // um pouco mais próximas
+
+        auto glass_material = make_shared<dielectric>(1.5);
+
+        // Esfera de vidro com casca interna negativa
+        world.add(make_shared<sphere>(point3(x, y, z), radius, glass_material));
+        world.add(make_shared<sphere>(point3(x, y, z), -radius * 0.95, glass_material));
+    }
 
 /*
     
