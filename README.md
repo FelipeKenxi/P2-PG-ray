@@ -22,6 +22,13 @@ Durante a execução do projeto, o objetivo foi:
 ## Cena Gerada
 -
 
+## Visualização da imagem
+- A imagem renderizada é salva no arquivo 'image.ppm'. É possível abrir esse arquivos com programas como:
+      - InfanView;
+      - GIMP;
+      - Visualizadores de imagem que suportem '.ppm';
+      - Ou converter para '.png'.
+
 ## Como executar o projeto
 
 ### Pré-requisitos
