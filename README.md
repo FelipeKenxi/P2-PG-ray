@@ -10,3 +10,26 @@ Durante a execução do projeto, o objetivo foi:
 3. Criar uma cena personalizada com esferas de diferentes materiais;
 4. Alterar a posição e direção da câmera para gerar imagens interessantes;
 5. Gerar imagens finais no formato '.ppm', que podem ser visualizadas com softwares de imagem compatíveis ou podem ser convetidas no formato '.png'.
+
+## Funcionalidades
+
+- Interseção de raios com esferas;
+- Materiais: difusos, metálicos e dielétricos;
+- Reflexão e refração de raios;
+- Câmera com profundidade de campo;
+- Geração de imagens '.ppm'.
+
+## Cena Gerada
+-
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+- Compilador C++ (recomendado: g++)
+- Terminal (Linux/Mac) ou WSL/Git Bash (no Windows)
+
+### Compilando
+
+### Executando
+./raytracer > image.ppm
