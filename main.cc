@@ -16,7 +16,25 @@ int main() {
     //Felipe P MElo
     //Uma lua brilhante
     auto material_lua = make_shared<lambertian>(color(2.0, 2.0, 0.8)); //talvez seja melhor ajustar 
-    world.add(make_shared<sphere>(point3(16.0, 40, -200), 100.0, material_lua)); 
+    world.add(make_shared<sphere>(point3(16.0, 40, -200), 100.0, material_lua));
+
+    //Felipe P Melo
+    //Estrelas de metal
+    for (int i = 0; i < 100; ++i) {
+        double radius = random_double(0.5, 1.5);
+        double x = random_double(-60, 10);
+        double y = random_double(0, 80);  
+        double z = random_double(-200, 0);
+
+        auto metal_star = make_shared<metal>(
+            color(random_double(0.7, 1.0), random_double(0.7, 1.0), random_double(0.7, 1.0)),
+            0.0
+        );
+
+        world.add(make_shared<sphere>(point3(x, y, z), radius, metal_star));
+    }
+    
+
 /*
     
     auto material_center = make_shared<lambertian>(color(0.1, 0.2, 0.5));
