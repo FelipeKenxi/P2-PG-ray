@@ -48,7 +48,10 @@ int main() {
         world.add(make_shared<sphere>(point3(x, y, z), -radius * 0.95, glass_material));
     }
 
-    
+    //color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
+    // x y z -> verde/verm
+    // z y x -> verm/ rosa
+    //color(x/255,z/255,y/255) -> azul/rosa
     for (int i=0; i<50;i++) {
         double radius = random_double(5.0, 12.0);
         double x = random_double(-250, 250);
@@ -56,7 +59,7 @@ int main() {
         double z = random_double(-150, -120); 
 
         auto lambert_material = make_shared<lambertian>(
-            color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
+            color(x/255,y/255,1 - z/255)
         );
 
         world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
@@ -68,7 +71,7 @@ int main() {
         double z = random_double(120, 150); 
 
         auto lambert_material = make_shared<lambertian>(
-            color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
+            color(x/255,y/255,1 - z/255)
         );
 
         world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
@@ -80,7 +83,7 @@ int main() {
         double z = random_double(-120, 120); 
 
         auto lambert_material = make_shared<lambertian>(
-            color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
+            color(x/255,y/255,1 - z/255)
         );
 
         world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
@@ -88,25 +91,14 @@ int main() {
 
     world.add(make_shared<sphere>(point3(0,0,5), 2.0, make_shared<dielectric>(1.7)));
     world.add(make_shared<sphere>(point3(0,0,5), -2 * 0.95, make_shared<dielectric>(1.7)));
-/*
-    
-    auto material_center = make_shared<lambertian>(color(0.1, 0.2, 0.5));
-    auto material_left   = make_shared<dielectric>(1.50);
-    auto material_bubble = make_shared<dielectric>(1.00 / 1.50);
-    auto material_right  = make_shared<metal>(color(0.8, 0.6, 0.2), 1.0);
 
     
-    world.add(make_shared<sphere>(point3( 0.0,    0.0, -1.2),   0.5, material_center));
-    world.add(make_shared<sphere>(point3(-1.0,    0.0, -1.0),   0.5, material_left));
-    world.add(make_shared<sphere>(point3(-1.0,    0.0, -1.0),   0.4, material_bubble));
-    world.add(make_shared<sphere>(point3( 1.0,    0.0, -1.0),   0.5, material_right));
-*/
     camera cam;
 
     cam.aspect_ratio      = 16.0 / 9.0;
-    cam.image_width       = 400;
-    cam.samples_per_pixel = 30;
-    cam.max_depth         = 50;
+    cam.image_width       = 1920;
+    cam.samples_per_pixel = 1000;
+    cam.max_depth         = 100;
 
 
     cam.vfov     = 90;
