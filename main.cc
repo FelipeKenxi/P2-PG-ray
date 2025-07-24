@@ -15,7 +15,7 @@ int main() {
 
     //Felipe P MElo
     //Uma lua brilhante
-    auto material_lua = make_shared<lambertian>(color(2.0, 2.0, 0.8)); //talvez seja melhor ajustar 
+    auto material_lua = make_shared<lambertian>(color(2.0, 2.0, 0.8));  
     world.add(make_shared<sphere>(point3(0, 10, -300), 150.0, material_lua));
 
     //Felipe P Melo
@@ -37,9 +37,9 @@ int main() {
     // Esferas de vidro (dielétrico)
     for (int i = 0; i < 7; ++i) {
         double radius = random_double(2.0, 5.0);
-        double x = random_double(-25, 25);   // região mais central
+        double x = random_double(-25, 25); 
         double y = random_double(-5, 20);
-        double z = random_double(-30, 0); // um pouco mais próximas
+        double z = random_double(-30, 0); 
 
         auto glass_material = make_shared<dielectric>(1.5);
 
@@ -48,10 +48,7 @@ int main() {
         world.add(make_shared<sphere>(point3(x, y, z), -radius * 0.95, glass_material));
     }
 
-    //color(random_double(0.01, 0.15), random_double(0.1, 0.25), random_double(0.3, 0.7))
-    // x y z -> verde/verm
-    // z y x -> verm/ rosa
-    //color(x/255,z/255,y/255) -> azul/rosa
+    // Criação de esferas difusas com cores baseadas em posição
     for (int i=0; i<50;i++) {
         double radius = random_double(5.0, 12.0);
         double x = random_double(-250, 250);
@@ -89,6 +86,7 @@ int main() {
         world.add(make_shared<sphere>(point3(x, y, z), radius, lambert_material));
     }
 
+    // Criação da esfera de vidro no centro da tela
     world.add(make_shared<sphere>(point3(0,0,5), 2.0, make_shared<dielectric>(1.7)));
     world.add(make_shared<sphere>(point3(0,0,5), -2 * 0.95, make_shared<dielectric>(1.7)));
 
@@ -102,8 +100,8 @@ int main() {
 
 
     cam.vfov     = 90;
-    cam.lookfrom = point3(0, 0, 10);         // origem
-    cam.lookat   = point3(0, 0, -1);         // olha para frente (Z+)
+    cam.lookfrom = point3(0, 0, 10);         // um pouco atrás da origem
+    cam.lookat   = point3(0, 0, -1);         // olha para trás (objeto fica mais perto com um Z maior)
     cam.vup      = vec3(0, 1, 0);           // "para cima" é Y+
 
     cam.defocus_angle = 0.6;
