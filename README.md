@@ -26,6 +26,8 @@ Para uma cena mais atraente, as cores dos objetos difusos foram baseadas em suas
 
 A imagem final gerada está disponível dentro do próprio diretório deste projeto com qualidade full HD e em formato PPM (Portable Pixmap).
 
+![Minha cena renderizada](image.ppm)
+
 ## Como executar o projeto
 
 ### Pré-requisitos
