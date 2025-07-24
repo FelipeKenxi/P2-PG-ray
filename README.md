@@ -20,7 +20,8 @@ Durante a execução do projeto, o objetivo foi:
 - Geração de imagens '.ppm'.
 
 ## Cena Gerada
--
+A inspiração para a cena foi uma paisagem com um horizonte e um sol ao fundo. Para enriquecer o cenário, foram adicionadas esferas com material dielétrico flutuando no ar, semelhantes a bolhas de sabão. No plano do chão, esferas de metal refletem as esferas da cena. Esferas difusas (lambertian) foram criadas, e inclusive existem algumas atrás da câmera e que são visíveis pelo reflexo das esferas metálicas na intenção de adicionar um elemento visual inesperado. 
+Para uma cena bonita, as cores dos objetos difusos foram baseadas em suas respectivas posições no espaço, deixando o projeto mais colorido. Ainda falando sobre eles, foi escolhido deixar os tons azuis e roxos para dar um contraste interessante com o sol amarelo e o chão verde. Também foi propositalmente colocado uma esfera com material dielétrico bem no centro da imagem para ficar bem visível o efeito de "bolha de sabão". 
 
 ## Como executar o projeto
 
